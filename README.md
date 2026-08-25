@@ -8,8 +8,10 @@ Policy verbietet — analog zu Memory Safety (Prozess-Sandbox statt fehlerfreiem
 ## Ausführen
 
 ```bash
-python3 demo.py          # narrierte Demo: 1 Angriffs-Mail, 4 Planner, 1 Kernel
-python3 tests/test_kernel.py   # 5 Tests
+python3 demo.py                   # narrierte Demo: 1 Angriffs-Mail, 4 Planner, 1 Kernel
+python3 tests/test_kernel.py      # 5 Tests, End-to-End über alle Layer
+python3 tests/test_provenance.py  # 6 Tests, Layer 1
+python3 tests/test_quarantine.py  # 12 Tests, Layer 2
 ```
 
 ## Das Szenario
@@ -72,5 +74,5 @@ kernel/
   planner.py       Authorizer (trusted) + Planner (untrusted, austauschbar)
   kernel.py        Orchestrierung + Enforcement
 demo.py            narrierte End-to-End-Demo
-tests/             5 Tests
+tests/             23 Tests
 ```
